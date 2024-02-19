@@ -21,7 +21,7 @@ public class OrderController {
 	
 	@GetMapping("/greet")
 	public String greet(){
-		return "Hello from OrderService";
+		return "Hello from OrderService instance2";
 	}
 	
 	@GetMapping("/orders")
