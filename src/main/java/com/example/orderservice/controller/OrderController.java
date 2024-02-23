@@ -3,8 +3,6 @@ package com.example.orderservice.controller;
 import java.util.List;
 import java.util.Optional;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,9 +18,6 @@ public class OrderController {
 
 	@Autowired
 	OrderRepository orderRepository;
-	
-    private static final Logger log = LoggerFactory.getLogger(OrderController.class);
-
 	
 	@GetMapping("/greet")
 	public String greet(){
@@ -46,7 +41,6 @@ public class OrderController {
 	
 	@GetMapping("/orderByName/{username}")
 	public List<Orders> getOrdersByUsername(@PathVariable String username){
-		log.info("From OrderService");
 		return orderRepository.findByUsername(username);
 	}
 	
